@@ -144,12 +144,12 @@ class QuorumAPI(object):
             if isinstance(value, list) or isinstance(value, tuple):
                 self.filters[key] = ",".join([str(val) for val in value])
 
-        print self.filters
+        print (self.filters)
 
         initial_request = requests.get(self.BASE_URL + "/api/%s/" % self.endpoint,
                                        params = self.filters)
                                   
-        print initial_request.url
+        print (initial_request.url)
 
         initial_request = initial_request.json()
 
